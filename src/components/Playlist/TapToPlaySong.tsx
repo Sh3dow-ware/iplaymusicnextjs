@@ -14,8 +14,6 @@ export const TapToPlaySong = ({
                                 artist = "Placeholder",
                                 songName = "Placeholder",
                                 length = "Placeholder",
-                                albumId,
-                                albumImage,
                                 onPlay
                               }: TapToPlaySongProps) => {
   

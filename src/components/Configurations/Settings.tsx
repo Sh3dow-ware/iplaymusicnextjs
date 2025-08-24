@@ -31,7 +31,7 @@ export const Settings = () => {
                 className="slider"
                 layout
                 variants={sliderVariants}
-                animate={theme}
+                animate={theme ?? "light"}
                 transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                 aria-hidden="true"
             />
@@ -39,7 +39,7 @@ export const Settings = () => {
                 className="knob"
                 layout
                 variants={knobVariants}
-                animate={theme}
+                animate={theme ?? "light"}
                 transition={{ type: 'spring', stiffness: 300, damping: 22 }}
                 aria-hidden="true"
             />

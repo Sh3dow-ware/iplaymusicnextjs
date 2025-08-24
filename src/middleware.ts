@@ -23,7 +23,7 @@ async function refreshAccessToken(refreshToken: string): Promise<{ success: bool
       newRefreshToken: data.refresh_token
     };
   } catch (error) {
-    return { success: false, error: "Network error during token refresh" };
+    return { success: false, error: "Network error during token refresh" + error};
   }
 }
 

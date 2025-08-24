@@ -113,3 +113,21 @@ export interface SpotifyAlbum {
   genres?: string[];
   popularity?: number;
 }
+
+export interface SpotifyTrack {
+  id: string;
+  name: string;
+  type: 'track';
+  uri: string;
+  external_urls: {
+    spotify: string;
+  };
+  artists: SpotifyArtist[];
+  album: SpotifyAlbum;
+  duration_ms: number;
+  explicit: boolean;
+  popularity: number;
+  preview_url: string | null;
+  track_number: number;
+  disc_number: number;
+}
