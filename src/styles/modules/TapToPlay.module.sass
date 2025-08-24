@@ -1,0 +1,46 @@
+@use "@/styles/utils/variables" as variables
+
+.song-info
+  display: flex
+  justify-content: space-evenly
+  align-items: center
+  padding: 1.25rem
+  width: 100%
+  transition: all 0.2s ease
+  border-radius: 8px
+  
+  &:hover
+    background: rgba(255, 255, 255, 0.05)
+    transform: translateY(-2px)
+    
+  &__wrapper
+    display: flex
+    flex-direction: column
+    place-items: start
+    margin: 1rem
+    width: 100%
+  &__title
+    font-family: variables.$PoppinsFont
+    font-weight: bold
+  &__artist
+    font-family: variables.$PoppinsFont
+    font-weight: 200
+  &__length
+    font-family: variables.$PoppinsFont
+    font-weight: 200
+  &__icon-wrap
+    padding: 0.5rem
+    border-radius: 50%
+    height: 40px
+    width: 40px
+    background: linear-gradient(#EE0979, #FF6A00)
+    transition: all 0.2s ease
+    
+    &:hover
+      transform: scale(1.1)
+      box-shadow: 0 4px 12px rgba(238, 9, 121, 0.3)
+      
+  &__icon
+    color: white
+    fill: white
+

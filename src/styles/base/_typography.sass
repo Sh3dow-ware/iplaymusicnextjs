@@ -1,0 +1,35 @@
+@use "sass:map"
+@use "sass:string"
+@use "sass:meta"
+
+$font-path: '/fonts/'
+
+$fonts:(100: normal,100italic: italic,200: normal,200italic: italic,300: normal,300italic: italic,400: normal,italic: italic,500: normal,500italic: italic,600: normal,600italic: italic,700: normal,700italic: italic,800: normal,800italic: italic,900: normal,900italic: italic)
+
+//This is a mixin (called with @include) that generates a block of @font-face. It takes:
+// The filename (e.g., 300italic)
+// The style (e.g., italic)
+// The weight (e.g., 300)
+//It then makes a  font-face rule with that info, referencing a .woff2 file named like poppins-v23-latin-300italic.woff2.
+=font-face($filename, $style, $weight)
+  @font-face
+    font-display: swap
+    font-family: 'Poppins'
+    font-style: #{$style}
+    font-weight: #{$weight}
+    src: url('#{$font-path}poppins-v23-latin-#{$filename}.woff2') format('woff2')
+
+// Loop through each key in the $fonts map. These are filenames like 300italic, 500, italic, etc.
+@each $filename in map.keys($fonts)
+  // If the key is a number (400), convert it into a string. Why? Because we’ll be doing string operations like index() on it, and strings don’t like raw numbers
+  $filename-str: if(meta.type-of($filename) == "number", "#{$filename}", $filename)
+  // This grabs the style (italic or normal) from the map using the key.
+  $style: map.get($fonts, $filename)
+
+  $weight: if(string.index($filename-str, 'italic'),string.slice($filename-str, 1, string.index($filename-str, 'italic') - 1), $filename-str)
+  //If filename-str contains "italic" (e.g., 300italic), it slices out everything before "italic" (e.g., "300").
+  //If not, it just uses the whole string (e.g., "500").
+  //So you end up with the correct font weight as a string.
+  @include font-face($filename-str, $style, $weight)
+  @debug($filename-str, $style, $weight)
+

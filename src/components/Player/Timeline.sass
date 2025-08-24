@@ -1,0 +1,54 @@
+$PrimaryColor: #FF1168
+$PinkToOrangeGradient: linear-gradient(#EE0979, #FF6A00)
+$KnobSize: 24px
+$KnobInnerSize: 16px
+$TrackHeight: 8px
+
+.timeline
+  position: relative
+  width: 100%
+  max-width: 500px
+  padding: 1rem
+  height: max-content
+
+  &__track
+    position: relative
+    height: $TrackHeight
+    background: $PrimaryColor
+
+  &__progress
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    background: $PinkToOrangeGradient
+    z-index: 1
+
+  &__knob
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    width: $KnobSize
+    height: $KnobSize
+    background: rgba(255, 17, 104, 0.3)
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 2
+
+    &::after
+      content: ''
+      width: $KnobInnerSize
+      height: $KnobInnerSize
+      background: $PrimaryColor
+      border-radius: 50%
+
+  &__input
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    opacity: 0
+    cursor: pointer

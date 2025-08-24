@@ -1,0 +1,16 @@
+@use "@/styles/themes/ThemeConfig" as ThemeConfig
+body.light
+  background-color: ThemeConfig.$light-bg
+  color: ThemeConfig.$light-text
+  transition: background-color 0.3s ease, color 0.3s ease
+
+body.dark
+  background-color: ThemeConfig.$dark-bg
+  color: ThemeConfig.$dark-text
+  transition: background-color 0.3s ease, color 0.3s ease
+
+
+body.dark.dark-pink
+  background: ThemeConfig.$gradient-bg
+  color: ThemeConfig.$dark-text
+  transition: background-color 0.3s ease, color 0.3s ease

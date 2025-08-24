@@ -1,0 +1,26 @@
+
+// Breakpoints/Gaps/Grid Variables
+$breakpoints:(small: 480px,medium: 768px,large: 1024px,xlarge: 1280px)
+$gaps:(default: 16px, small: 8px, medium: 12px ,large: 24px,xlarge: 32px)
+$columns-list: 2, 3, 4, 6, 12
+
+.grid
+  display: grid
+  gap: map-get($gaps, default)
+
+@each $cols in $columns-list
+  .grid-cols-#{$cols}
+    grid-template-columns: repeat(#{$cols}, 1fr)
+
+
+@each $breakpoint, $size in $breakpoints
+  @media (min-width: $size)
+    @each $cols in $columns-list
+      .grid-cols-#{$cols}-#{$breakpoint}
+        grid-template-columns: repeat(#{$cols}, 1fr)
+
+
+@each $breakpoint, $size in $breakpoints
+  @media (min-width: $size)
+    .grid-gap-#{$breakpoint}
+      gap: map-get($gaps, $breakpoint)

@@ -1,0 +1,72 @@
+@use "@/styles/utils/variables" as variables
+.accordion-item
+  margin: 10px
+  display: flex
+  flex-direction: column
+  align-items: center
+  font-family: variables.$PoppinsFont
+
+.accordion-header
+  color: white
+  padding: 16px
+  border-radius: 8px
+  cursor: pointer
+  display: flex
+  justify-content: space-between
+  align-items: center
+  font-weight: bold
+  max-width: 325px
+  width: 100%
+  box-shadow: none
+  background-size: 200% 100%
+
+.accordion-content
+  padding: 16px 0
+
+.sub-list
+  list-style-type: none
+  padding: 0
+  margin: 0
+
+.sub-item
+  padding: 8px 0
+  display: flex
+  align-items: center
+  justify-content: space-between
+  border-bottom: 1px solid #eee
+  font-family: variables.$PoppinsFont
+  font-weight: 300
+
+.sub-item:last-child
+  border-bottom: none
+
+.accordion-body
+  overflow: hidden
+  padding-left: 16px
+  padding-right: 16px
+  max-width: 325px
+  width: 100%
+  border-bottom-left-radius: 8px
+  border-bottom-right-radius: 8px
+
+
+.accordion-container
+  font-family: variables.$PoppinsFont
+  max-width: 315px
+  width: 100%
+  display: flex
+  flex-direction: column
+  justify-self: center
+  &__heading
+    text-align: left
+    margin-bottom: 24px
+    max-width: 325px
+    font-size: 2rem
+    font-weight: bold
+    padding: 5px
+    background: -webkit-linear-gradient(left, variables.$GradientStart, variables.$GradientEnd)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    @media only screen and (max-width: 300px)
+      font-size: 1.5rem
+

@@ -1,0 +1,17 @@
+@use "@/styles/utils/variables" as variables
+@use "sass:color"
+
+.button
+  font-family: variables.$PoppinsFont
+  font-weight: bold
+  background-color: variables.$PinkTextColor
+  border: 4px solid variables.$BorderPurpleColor
+  max-width: 150px
+  border-radius: 12px
+  height: 50px
+  width: 100%
+  transition: 300ms
+  &:hover
+    background-color: color.adjust(variables.$PinkTextColor, $lightness: -10%)
+    transform: scale(1.1)
+

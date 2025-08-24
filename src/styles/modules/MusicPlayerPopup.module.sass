@@ -1,0 +1,255 @@
+@import '../utils/variables'
+@import '../utils/animation'
+
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(0, 0, 0, 0.8)
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 1000
+  backdrop-filter: blur(4px)
+
+.popup
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)
+  border-radius: 16px
+  width: 90%
+  max-width: 500px
+  max-height: 80vh
+  overflow: hidden
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3)
+  border: 1px solid rgba(255, 255, 255, 0.1)
+
+.header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 20px
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+
+.albumInfo
+  display: flex
+  align-items: center
+  gap: 12px
+
+.albumImage
+  width: 50px
+  height: 50px
+  border-radius: 8px
+  object-fit: cover
+
+.albumName
+  color: white
+  font-size: 16px
+  font-weight: 600
+  margin: 0
+
+.albumArtist
+  color: #b3b3b3
+  font-size: 14px
+  margin: 4px 0 0 0
+
+.closeButton
+  background: none
+  border: none
+  color: #b3b3b3
+  cursor: pointer
+  padding: 8px
+  border-radius: 50%
+  transition: all 0.2s ease
+  
+  &:hover
+    color: white
+    background: rgba(255, 255, 255, 0.1)
+
+.currentPlayer
+  padding: 20px
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+
+.trackInfo
+  margin-bottom: 16px
+
+.trackName
+  color: white
+  font-size: 18px
+  font-weight: 600
+  margin: 0 0 4px 0
+
+.trackArtist
+  color: #b3b3b3
+  font-size: 14px
+  margin: 0
+
+.spotifyPlayer
+  margin: 16px 0
+  border-radius: 12px
+  overflow: visible !important
+  position: relative
+  background: #121212
+  min-height: 152px
+  width: 100%
+  
+  iframe
+    border-radius: 12px !important
+    width: 100% !important
+    height: 152px !important
+    border: none !important
+    display: block !important
+    visibility: visible !important
+    opacity: 1 !important
+    position: relative !important
+    z-index: 1 !important
+    background: transparent !important
+
+.playerLoading
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  color: #b3b3b3
+  font-size: 14px
+  text-align: center
+
+.controls
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 16px
+  margin-top: 16px
+
+.controlButton
+  background: rgba(255, 255, 255, 0.1)
+  border: none
+  color: white
+  padding: 12px
+  border-radius: 50%
+  cursor: pointer
+  transition: all 0.2s ease
+  display: flex
+  align-items: center
+  justify-content: center
+  
+  &:hover:not(:disabled)
+    background: rgba(255, 255, 255, 0.2)
+    transform: scale(1.05)
+  
+  &:disabled
+    opacity: 0.5
+    cursor: not-allowed
+
+.playButton
+  background: #1db954
+  padding: 16px
+  
+  &:hover:not(:disabled)
+    background: #1ed760
+    transform: scale(1.1)
+
+.trackList
+  max-height: 300px
+  overflow-y: auto
+  padding: 0 20px 20px
+
+.trackListTitle
+  color: white
+  font-size: 16px
+  font-weight: 600
+  margin: 0 0 16px 0
+  padding-top: 16px
+
+.loading, .error
+  text-align: center
+  padding: 40px 20px
+  color: #b3b3b3
+
+.error
+  color: #ff6b6b
+
+.tracks
+  display: flex
+  flex-direction: column
+  gap: 4px
+
+.trackItem
+  display: flex
+  align-items: center
+  gap: 12px
+  padding: 8px 12px
+  border-radius: 8px
+  cursor: pointer
+  transition: all 0.2s ease
+  
+  &:hover
+    background: rgba(255, 255, 255, 0.05)
+  
+  &.activeTrack
+    background: rgba(29, 185, 84, 0.1)
+    border: 1px solid rgba(29, 185, 84, 0.3)
+
+.trackNumber
+  width: 20px
+  text-align: center
+  color: #b3b3b3
+  font-size: 14px
+  font-weight: 500
+
+.playingIndicator
+  color: #1db954
+  animation: pulse 1.5s ease-in-out infinite
+
+.trackDetails
+  flex: 1
+  min-width: 0
+
+.trackTitle
+  color: white
+  font-size: 14px
+  font-weight: 500
+  margin: 0
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.trackArtists
+  color: #b3b3b3
+  font-size: 12px
+  margin: 2px 0 0 0
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.trackDuration
+  color: #b3b3b3
+  font-size: 12px
+  font-weight: 500
+
+@keyframes pulse
+  0%, 100%
+    opacity: 1
+  50%
+    opacity: 0.5
+
+// Responsive design
+@media (max-width: 768px)
+  .popup
+    width: 95%
+    max-height: 85vh
+  
+  .header
+    padding: 16px
+  
+  .currentPlayer
+    padding: 16px
+  
+  .trackList
+    padding: 0 16px 16px
+  
+  .albumName
+    font-size: 14px
+  
+  .trackName
+    font-size: 16px

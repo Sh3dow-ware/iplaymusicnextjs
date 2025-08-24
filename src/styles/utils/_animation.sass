@@ -1,0 +1,33 @@
+.transition-wrapper
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  height: 100vh
+  gap: 2rem
+
+.fade-slide-out
+  animation: fade-slide-out 500ms ease-in forwards
+
+@keyframes fade-slide-out
+  0%
+    opacity: 1
+    transform: translateX(0)
+  100%
+    opacity: 0
+    transform: translateX(-50px)
+
+
+.fade-slide-in
+  animation: fade-slide-in 500ms ease-out
+
+@keyframes fade-slide-in
+  0%
+    opacity: 0
+    transform: translateX(50px)
+  100%
+    opacity: 1
+    transform: translateX(0)
+.override-pink
+  background-color: #ff1168

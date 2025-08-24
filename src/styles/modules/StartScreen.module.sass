@@ -1,0 +1,29 @@
+@use "@/styles/utils/variables" as variables
+
+@keyframes FadeInBounce
+  0%
+    opacity: 0
+    transform: scale(0.5) rotateX(-90deg) skewY(20deg)
+  60%
+    opacity: 1
+    transform: scale(1.05)
+  80%
+    transform: scale(0.95)
+  100%
+    transform: scale(1)
+
+
+
+
+
+.start-screen
+  display: flex
+  flex-direction: column
+  align-items: center
+  animation: FadeInBounce 1s ease
+  &__title
+    font-family: variables.$PoppinsFont
+    font-size: 2rem
+    font-weight: bold
+    margin-top: 35px
+    color: inherit

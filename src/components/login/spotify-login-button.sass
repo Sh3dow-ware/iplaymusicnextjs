@@ -1,0 +1,47 @@
+.spotify-login-wrapper
+  display: flex
+  align-items: center
+  justify-content: center
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../../app/assets/logo/OneClickAway.png") no-repeat center
+  background-size: cover
+
+.spotify-login-button
+  display: grid
+  grid-template-columns: auto 1fr
+  grid-gap: 0.5rem
+  place-items: center
+  place-content: center
+  gap: 0.75rem
+  background-color: #000000
+  border-radius: 999px
+  border: 0.5rem solid #ffffff
+  padding: 0.5rem 10.5rem
+  cursor: pointer
+  color: white
+  height: 150px
+  max-width: 150px
+  width: max-content
+  font-size: 3rem
+  transition: background-color 0.3s ease, box-shadow 0.2s ease
+  user-select: none
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+
+  svg
+    min-width: 48px
+    stroke: white
+    transition: stroke 0.3s ease
+
+
+  &:hover,
+  &:focus
+    transition: cubic-bezier(.64,.18,.32,.81) 200ms
+    scale: 1.2
+    background-color: #033f18
+    svg
+      stroke: #e1f8d5
+  &:not(:hover)
+    transition: cubic-bezier(.64,.18,.32,.81) 200ms
+
+  &:active
+    background-color: #128c39
+    box-shadow: none
