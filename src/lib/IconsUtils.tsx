@@ -33,6 +33,7 @@ export const Activity = forwardRef<SVGSVGElement, IconProps>(({ active, ...props
       <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" />
     </svg>
 ))
+Activity.displayName = "Activity"
 
 export const Mic = forwardRef<SVGSVGElement, IconProps>(({ active, ...props }, ref) => (
     <svg
@@ -56,6 +57,7 @@ export const Mic = forwardRef<SVGSVGElement, IconProps>(({ active, ...props }, r
       <line x1="12" y1="19" x2="12" y2="22" />
     </svg>
 ))
+Mic.displayName = "Mic"
 
 export const Wifi = forwardRef<SVGSVGElement, IconProps>(({ active, ...props }, ref) => (
     <svg
@@ -80,6 +82,7 @@ export const Wifi = forwardRef<SVGSVGElement, IconProps>(({ active, ...props }, 
       <path d="M8.5 16.429a5 5 0 0 1 7 0" />
     </svg>
 ))
+Wifi.displayName = "Wifi"
 
 export const Contrast = forwardRef<SVGSVGElement, IconProps>(({ active, ...props }, ref) => (
     <svg
@@ -102,6 +105,7 @@ export const Contrast = forwardRef<SVGSVGElement, IconProps>(({ active, ...props
       <path d="M12 18a6 6 0 0 0 0-12v12z" />
     </svg>
 ))
+Contrast.displayName = "Contrast"
 
 export const Settings = forwardRef<SVGSVGElement, IconProps>(({ active, ...props }, ref) => (
     <svg
@@ -124,3 +128,4 @@ export const Settings = forwardRef<SVGSVGElement, IconProps>(({ active, ...props
       <circle cx="12" cy="12" r="3" />
     </svg>
 ))
+Settings.displayName = "Settings"
